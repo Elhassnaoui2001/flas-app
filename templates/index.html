@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            
+            font-family: Arial, sans-serif;
+            margin: 2rem; /* Add some margin around the body */
+          }
+          
+          header {
+            text-align: center;
+            margin-bottom: 2rem; /* Add space after the header */
+          }
+          
+          h1 {
+            text-items: center;
+            font-size: 2rem; /* Increase font size for heading */
+          }
+          
+          .form-container {
+            display: flex; /* Center the form horizontally */
+            justify-content: center;
+          }
+          
+          textarea {
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+          }
+          
+          button {
+            padding: 1rem 2rem;
+            background-color: #4CAF50; /* Green button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          
+          button:hover {
+            background-color: #3e8e41; /* Darker green on hover */
+          }
+          
+          .result-container {
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          }
+          .sentiment-result {
+            background-color: #f5f5f5; /* Light background color */
+            border: 1px solid #ddd; /* Light border */
+            border-radius: 10px; /* Rounded corners */
+            padding: 1rem;
+            margin: 1rem 0; /* Add some margin */
+            font-size: 1rem; /* Adjust font size */
+          }
+          
+          .sentiment-result h2 {
+            font-weight: normal; /* Lighter font weight */
+            margin-bottom: 0.5rem; /* Reduce margin below heading */
+          }
+          
+          .sentiment-result p {
+            color: #333; /* Darker text color */
+            line-height: 1.5; /* Increase line spacing for readability */
+          }
+          
+          
+    </style>
+</head>
+<body>
+    
+    <h1>Sentiment Analysis with Hugging Face API</h1>
+    <form method="post" class="form-container">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter text here..."></textarea>
+        <br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+    {% if sentiment %}
+    <div class="sentiment-result"> <h2>Analysis Result:</h2>
+        <p>Sentiment: {{ sentiment }}</p>
+        <p>Text: {{ user_input }}</p>
+      </div>
+    {% endif %}
+</body>
+</html>
